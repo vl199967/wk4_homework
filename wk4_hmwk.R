@@ -13,3 +13,6 @@ GII <- read.csv(here::here('GII2.csv'))
 world_shape <- merge(world_shape, GII, by.x = 'ISO3C', by.y='countryIsoCode')
 
 world_shape$diff <- world_shape$X2019 - world_shape$X2010
+
+tm_shape(world_shape)+
+  tm_fill(col='diff')
